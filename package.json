@@ -1,5 +1,24 @@
 {
   "dependencies": {
-    "dotenv": "^16.0.1"
-  }
+    "dotenv": "^16.0.1",
+    "https-localhost": "^4.7.1"
+  },
+  "name": "budgettrafikgo",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "PORT=3000 serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corkix/BudgetTrafikGo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corkix/BudgetTrafikGo/issues"
+  },
+  "homepage": "https://github.com/Corkix/BudgetTrafikGo#readme"
 }
