@@ -1,7 +1,10 @@
 const buttonElem = document.querySelector("#position-button");
 
+const API_TOKEN =
+  "pk.eyJ1Ijoiam9oYW5raXZpIiwiYSI6ImNrcnl6M25xMDA4aWUyd3BqY3EzYnA1NTEifQ.ve5rEn8ZDwUGKvphMkEdpw";
+
 function showOnMap(position) {
-  mapboxgl.accessToken = process.env.MAP_API_TOKEN;
+  mapboxgl.accessToken = API_TOKEN;
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11",
