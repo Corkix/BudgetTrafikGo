@@ -3,20 +3,6 @@ const buttonElem = document.querySelector("#position-button");
 const API_TOKEN =
   "pk.eyJ1Ijoiam9oYW5raXZpIiwiYSI6ImNrcnl6M25xMDA4aWUyd3BqY3EzYnA1NTEifQ.ve5rEn8ZDwUGKvphMkEdpw";
 
-function showOnMap(position) {
-  mapboxgl.accessToken = API_TOKEN;
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: [position.coords.longitude, position.coords.latitude],
-    zoom: 13,
-  });
-
-  new mapboxgl.Marker()
-    .setLngLat([position.coords.longitude, position.coords.latitude])
-    .addTo(map);
-}
-
 async function getLongLat(long, lat) {
   const res = await fetch(
     `https://api.resrobot.se/v2.1/location.nearbystops?format=json&accessId=6097562d-5f91-462b-b5e9-a941856f3fd4&originCoordLat=${lat}&originCoordLong=${long}`
@@ -34,7 +20,6 @@ buttonElem.addEventListener("click", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((pos) => {
       console.log(pos);
-      // showOnMap(pos);
       getLongLat(pos.coords.longitude, pos.coords.latitude);
     });
   }
